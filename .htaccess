@@ -1,0 +1,18 @@
+# Rhino Republic static site (Hostinger / LiteSpeed / Apache)
+DirectoryIndex index.html
+Options -Indexes
+<IfModule mod_headers.c>
+  # PREVIEW ONLY: remove the X-Robots-Tag line (and the noindex meta tags + robots.txt) when going live on rhinospiritsandbeverages.com
+  Header set X-Robots-Tag "noindex, nofollow"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "no-referrer"
+  Header set X-Frame-Options "DENY"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+  <FilesMatch "\.(webp|jpg|png|css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+</IfModule>
