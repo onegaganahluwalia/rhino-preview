@@ -1,18 +1,42 @@
-# Rhino Republic static site (Hostinger / LiteSpeed / Apache)
+# Rhino Republic v2: static site for Hostinger (LiteSpeed / Apache)
 DirectoryIndex index.html
 Options -Indexes
+ErrorDocument 404 /404.html
+
+# --- HTTPS redirect: ENABLE AT MIGRATION, once SSL is active on rhinospiritsandbeverages.com ---
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
 <IfModule mod_headers.c>
-  # PREVIEW ONLY: remove the X-Robots-Tag line (and the noindex meta tags + robots.txt) when going live on rhinospiritsandbeverages.com
-  Header set X-Robots-Tag "noindex, nofollow"
-  Header set X-Content-Type-Options "nosniff"
-  Header set Referrer-Policy "no-referrer"
-  Header set X-Frame-Options "DENY"
-  Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-  Header set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
-  <FilesMatch "\.(webp|jpg|png|css|js)$">
-    Header set Cache-Control "public, max-age=604800"
+  # PREVIEW ONLY: remove at launch together with the robots meta tags and robots.txt
+  Header always set X-Robots-Tag "noindex, nofollow"
+
+  # HSTS: browsers ignore it over plain HTTP; takes effect once served over HTTPS.
+  # Start at 1 year without preload; add "; preload" only after deciding to submit to the preload list.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=(), browsing-topics=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  <FilesMatch "\.(webp|png|woff2|css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>
+
 <IfModule mod_mime.c>
   AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml text/plain
 </IfModule>

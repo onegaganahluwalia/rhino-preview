@@ -4,186 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Rhino Republic | Rhino Spirits &amp; Beverages Private Limited</title>
-<meta name="description" content="Rhino Republic is the brand universe of Rhino Spirits &amp; Beverages Private Limited, Thane, Maharashtra. Products launching soon. Not available for online sale.">
+<title>Rhino Republic | Rhino Spirits &amp; Beverages Pvt Ltd</title>
+<meta name="description" content="Rhino Republic is the brand universe of Rhino Spirits &amp; Beverages Private Limited, Thane. Spirits in development. No online sales.">
 <meta name="theme-color" content="#151413">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/CormorantGaramond-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/InterTight-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/bottles-crop-640.webp" as="image" type="image/webp" imagesrcset="assets/img/bottles-crop-480.webp 480w, assets/img/bottles-crop-640.webp 640w, assets/img/bottles-crop-1000.webp 1000w" imagesizes="(min-width: 1000px) 560px, 100vw">
 <link rel="stylesheet" href="css/site.css">
 <script src="js/gate-check.js"></script>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- Age gate: shown on first visit; answer is remembered on this device only (localStorage) -->
+<body class="gated">
 <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title" aria-describedby="gate-desc">
   <div class="gate__card">
-    <img class="gate__mark" src="assets/img/rhino-head.webp" width="140" height="161" alt="Rhino Republic rhino head mark">
+    <img class="gate__mark" src="assets/img/rhino-head-240.webp" width="240" height="276" alt="Rhino Republic engraved rhino head mark">
     <p class="gate__brand">Rhino Republic</p>
-    <div id="gate-ask">
-      <h1 class="gate__title" id="gate-title">Are you of legal drinking age in your state?</h1>
-      <p class="gate__desc" id="gate-desc">You must be 25 or older in Maharashtra. This website is about alcoholic beverages and is meant only for adults of legal drinking age.</p>
-      <div class="gate__actions">
-        <button type="button" class="btn btn--solid" id="gate-yes">Yes, I am</button>
-        <button type="button" class="btn btn--ghost" id="gate-no">No, I am not</button>
-      </div>
-      <noscript><p class="gate__note">Please enable JavaScript to confirm your age and enter this site.</p></noscript>
-      <p class="gate__fine">By entering you confirm you are of legal drinking age where you live. We remember your answer on this device only. Nothing is sent to us. <a href="privacy.html">Privacy notice</a></p>
+    <h1 class="gate__title" id="gate-title">Are you of legal drinking age in your state?</h1>
+    <p class="gate__desc" id="gate-desc">You must be 25 or older in Maharashtra. This website is about alcoholic beverages and is meant only for adults of legal drinking age.</p>
+    <div class="gate__actions">
+      <button type="button" class="btn btn--solid" id="gate-yes">Yes, I am of legal drinking age</button>
+      <a class="btn btn--ghost" id="gate-no" href="not-of-age.html">No, I am not</a>
     </div>
-    <div id="gate-exit" class="gate__exit" hidden>
-      <h1 class="gate__title" tabindex="-1" id="gate-exit-title">Thank you for your honesty.</h1>
-      <p class="gate__desc">This site is only for adults of legal drinking age. Please come back when you are.</p>
-      <button type="button" class="btn btn--ghost" id="gate-back">I answered by mistake</button>
-    </div>
+    <noscript><p class="gate__note">Please enable JavaScript to confirm your age and enter this site.</p></noscript>
+    <p class="gate__fine">This is a self-declaration; we do not verify age. Your answer is remembered on this device for 30 days and nothing is sent to us. <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="responsible-drinking.html">Responsible drinking</a></p>
   </div>
 </div>
-
+<a class="skip" href="#main">Skip to content</a>
 <header class="top" id="top">
   <div class="wrap top__in">
-    <a class="logo" href="#main" aria-label="Rhino Republic, back to top">
-      <img src="assets/img/rhino-head-sm.webp" width="34" height="39" alt="">
+    <a class="logo" href="index.html" aria-label="Rhino Republic home">
+      <img src="assets/img/rhino-head-120.webp" width="120" height="138" alt="">
       <span>Rhino Republic</span>
     </a>
     <nav aria-label="Main">
-      <ul class="nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#range">The Range</a></li>
-        <li><a href="#story">Story</a></li>
-        <li><a href="#company">Company</a></li>
-      </ul>
+      <ul class="nav-inline"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="range.html">Range</a></li><li><a href="story.html">Story &amp; Company</a></li><li><a href="trade.html">Trade</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <details class="menu"><summary>Menu</summary><ul class="nav"><li><a href="index.html" aria-current="page">Home</a></li><li><a href="range.html">Range</a></li><li><a href="story.html">Story &amp; Company</a></li><li><a href="trade.html">Trade</a></li><li><a href="contact.html">Contact</a></li></ul></details>
     </nav>
   </div>
 </header>
-
 <main id="main">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap hero__in">
-      <div class="hero__copy">
-        <p class="eyebrow">Rhino Spirits &amp; Beverages Private Limited</p>
-        <h1 id="hero-title" class="hero__title">Rhino<br>Republic</h1>
-        <p class="hero__lede">The brand universe for our spirits, built around the Indian one-horned rhino.</p>
-        <p class="hero__line">Thick skin. One horn. No apologies.</p>
-        <p class="notice"><span class="notice__dot" aria-hidden="true"></span>Products launching soon. Not available for online sale.</p>
-        <div class="hero__cta">
-          <a class="btn btn--solid" href="#range">Explore the range</a>
-          <a class="btn btn--ghost" href="#company">Company &amp; contact</a>
-        </div>
-      </div>
-      <figure class="hero__media">
-        <picture>
-          <source media="(max-width: 700px)" srcset="assets/img/bottles-crop-640.webp 640w, assets/img/bottles-crop-1000.webp 1000w" sizes="100vw" type="image/webp">
-          <source srcset="assets/img/bottles-crop-640.webp 640w, assets/img/bottles-crop-1000.webp 1000w" sizes="(max-width: 1000px) 100vw, 560px" type="image/webp">
-          <img src="assets/img/bottles-crop-1000.jpg" width="1000" height="857" alt="Two Rhino Republic concept bottles with amber liquid and paper labels: the front label shows an engraved front-facing rhino head, the back label shows an engraved walking rhino" fetchpriority="high">
-        </picture>
-        <figcaption>Concept bottle artwork. Final bottle and label design is in development.</figcaption>
-      </figure>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero__in">
+    <div>
+      <p class="eyebrow">Rhino Spirits &amp; Beverages Pvt Ltd</p>
+      <h1 id="hero-title" class="hero__title">Rhino<br>Republic</h1>
+      <p class="hero__lede">The brand universe for our spirits, built around the Indian one-horned rhino.</p>
+      <p class="hero__line">Unhurried. Unbothered. Unmistakable.</p>
+      <p class="notice"><span class="notice__dot" aria-hidden="true"></span>Our spirits are in development and not available for sale.</p>
+      <div class="btns"><a class="btn btn--solid" href="range.html">See the range</a><a class="btn btn--ghost" href="story.html">Our story</a></div>
     </div>
-  </section>
-
-  <section class="about section" id="about" aria-labelledby="about-title">
-    <div class="wrap about__in">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">One republic. Every spirit we make.</h2>
-        <p class="big">Rhino Republic is the umbrella brand universe for all of our alcohol brands. Each spirit carries its own name and character, and every one of them belongs to the Republic.</p>
-        <p>Our range is planned as a premium one, built for drinkers who want character and resilience rather than prettiness. The mascot is the Indian one-horned rhino: a single horn, plated skin, and a calm refusal to step off the path.</p>
-      </div>
-      <figure class="plate">
-        <img src="assets/img/rhino-walk.webp" width="1100" height="669" loading="lazy" decoding="async" alt="Engraved illustration of an Indian one-horned rhino walking, with folded armour-like skin and studded shoulders">
-        <figcaption>The walking rhino, our back-label mark. Artwork in development.</figcaption>
-      </figure>
+    <figure class="hero__media">
+      <img src="assets/img/bottles-crop-640.webp" srcset="assets/img/bottles-crop-480.webp 480w, assets/img/bottles-crop-640.webp 640w, assets/img/bottles-crop-1000.webp 1000w" sizes="(min-width: 1000px) 560px, 100vw" width="1000" height="857" fetchpriority="high" alt="Two Rhino Republic concept bottles with paper labels: one shows an engraved front-facing rhino head, the other an engraved walking rhino">
+      <figcaption>Concept bottle artwork. Final bottle and label design is in development.</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="section" aria-labelledby="range-title">
+  <div class="wrap">
+    <p class="eyebrow">The Range</p>
+    <h2 id="range-title">Citizens of the Republic</h2>
+    <p class="lede">Gin first, then an agave spirit, with more to follow. Names, bottles and labels are still being finalised.</p>
+    <ul class="cards" role="list">
+  <li class="card card--slate">
+    <div class="card__img"><img src="assets/img/bottle-front-460.webp" srcset="assets/img/bottle-front-230.webp 230w, assets/img/bottle-front-460.webp 460w" sizes="(min-width:720px) 30vw, 60vw" width="460" height="1040" loading="lazy" decoding="async" alt="Rhino Republic concept bottle with an engraved rhino head on the label"></div>
+    <div class="card__body">
+      <p class="card__no">01 &middot; Gin</p>
+      <h3>Gin</h3>
+      <dl><dt>Product name</dt><dd><span class="ph">Name TBC</span></dd></dl>
+      <p>An Indian gin with backbone, built around the armoured, single-horned rhino. Our first spirit.</p>
+      <p class="tag">In development</p>
     </div>
-  </section>
-
-  <section class="range section" id="range" aria-labelledby="range-title">
-    <div class="wrap">
-      <p class="eyebrow">The Range</p>
-      <h2 id="range-title">Citizens of the Republic</h2>
-      <p class="section__lede">Product names, bottles and labels are still being finalised. Here is what is in development.</p>
-      <ul class="cards" role="list">
-        <li class="card card--slate">
-          <div class="card__img"><img src="assets/img/bottle-front.webp" width="460" height="1040" loading="lazy" decoding="async" alt="Rhino Republic concept bottle, front label with engraved rhino head"></div>
-          <div class="card__body">
-            <p class="card__no">01</p>
-            <h3>Gin</h3>
-            <p>An Indian gin with backbone. Armoured and single-horned, standing its ground. Our first spirit.</p>
-            <p class="tag">In development</p>
-          </div>
-        </li>
-        <li class="card card--clay">
-          <div class="card__img"><img src="assets/img/bottle-back.webp" width="460" height="1040" loading="lazy" decoding="async" alt="Rhino Republic concept bottle, label with engraved walking rhino"></div>
-          <div class="card__body">
-            <p class="card__no">02</p>
-            <h3>Agave Spirit</h3>
-            <p>Thorns on the plant, armour on the rhino. An agave spirit that shares the Republic&rsquo;s thick skin.</p>
-            <p class="tag">In development</p>
-          </div>
-        </li>
-        <li class="card card--earth">
-          <div class="card__img card__img--mark"><img src="assets/img/rhino-head.webp" width="420" height="483" loading="lazy" decoding="async" alt="Rhino Republic rhino head mark"></div>
-          <div class="card__body">
-            <p class="card__no">More</p>
-            <h3>Future spirits</h3>
-            <p>More spirits will join the Republic over time, each with its own name and one shared mark.</p>
-            <p class="tag">Planned</p>
-          </div>
-        </li>
-      </ul>
-      <p class="range__note"><strong>Products launching soon. Not available for online sale.</strong> Rhino Republic does not sell alcohol online. Images on this page are concept artwork, not final packaging.</p>
+  </li>
+  <li class="card card--clay">
+    <div class="card__img"><img src="assets/img/bottle-back-460.webp" srcset="assets/img/bottle-back-230.webp 230w, assets/img/bottle-back-460.webp 460w" sizes="(min-width:720px) 30vw, 60vw" width="460" height="1040" loading="lazy" decoding="async" alt="Rhino Republic concept bottle with an engraved walking rhino on the label"></div>
+    <div class="card__body">
+      <p class="card__no">02 &middot; Agave Spirit</p>
+      <h3>Agave Spirit</h3>
+      <dl><dt>Product name</dt><dd><span class="ph">Name TBC</span></dd></dl>
+      <p>Thorns on the plant, armour on the rhino. An agave spirit that shares the Republic&rsquo;s thick skin.</p>
+      <p class="tag">In development</p>
     </div>
-  </section>
-
-  <section class="story section" id="story" aria-labelledby="story-title">
-    <div class="wrap">
-      <p class="eyebrow">Story</p>
-      <h2 id="story-title">Why a rhino</h2>
-      <div class="pillars">
-        <article>
-          <h3>Armour</h3>
-          <p>The one-horned rhino&rsquo;s plated skin stands for confidence and resilience. An Indian species, with one horn only.</p>
-        </article>
-        <article>
-          <h3>Republic</h3>
-          <p>A place you belong to. Drinkers, bartenders and makers are all citizens of the Republic.</p>
-        </article>
-        <article>
-          <h3>One mark</h3>
-          <p>One recognisable rhino, used with restraint. Character over decoration, on every bottle we make.</p>
-        </article>
-      </div>
+  </li>
+  <li class="card card--earth">
+    <div class="card__img card__img--mark"><img src="assets/img/rhino-head-240.webp" width="240" height="276" loading="lazy" decoding="async" alt="Rhino Republic engraved rhino head mark"></div>
+    <div class="card__body">
+      <p class="card__no">More &middot; Future</p>
+      <h3>Future spirits</h3>
+      <dl><dt>Categories</dt><dd><span class="ph">TBC</span></dd></dl>
+      <p>More spirits will join the Republic over time, each with its own name and one shared mark.</p>
+      <p class="tag">In development</p>
     </div>
-  </section>
-
-  <section class="company section" id="company" aria-labelledby="company-title">
-    <div class="wrap company__in">
-      <div>
-        <p class="eyebrow">Company &amp; Contact</p>
-        <h2 id="company-title">Rhino Spirits &amp; Beverages Private Limited</h2>
-        <p>Rhino Republic is owned by Rhino Spirits &amp; Beverages Private Limited, a private limited company incorporated in India.</p>
-        <p>For trade, partnership and media enquiries, write to us. We do not take orders and do not sell alcohol online.</p>
-        <p><a class="btn btn--solid" href="mailto:onerhinorepublic@gmail.com">onerhinorepublic@gmail.com</a></p>
-      </div>
-      <dl class="facts">
-        <div><dt>Company</dt><dd>Rhino Spirits &amp; Beverages Private Limited</dd></div>
-        <div><dt>CIN</dt><dd>U11011MR2026PTC482018</dd></div>
-        <div><dt>Incorporated</dt><dd>22 October 2026</dd></div>
-        <div><dt>Registered office</dt><dd>Lodha Amara W15-2803, Casa Sereno D, Kolshet Road, Thane (W) 400607, Maharashtra, India</dd></div>
-        <div><dt>Email</dt><dd><a href="mailto:onerhinorepublic@gmail.com">onerhinorepublic@gmail.com</a></dd></div>
-      </dl>
+  </li>
+</ul>
+    <p class="note"><strong>In development. Not available for sale.</strong> Rhino Republic does not sell alcohol online. Bottle images are concept artwork, not final packaging.</p>
+    <p class="more"><a class="btn btn--ghost" href="range.html">The range in detail</a></p>
+  </div>
+</section>
+<section class="section" aria-labelledby="story-title">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">Our story</p>
+      <h2 id="story-title">One republic. Every spirit we make.</h2>
+      <p class="big">Rhino Republic is the umbrella brand universe for all of our alcohol brands. Each spirit carries its own name and character, and every one of them belongs to the Republic.</p>
+      <p><a class="btn btn--ghost" href="story.html">Story &amp; company</a></p>
     </div>
-  </section>
+    <figure class="plate">
+      <img src="assets/img/rhino-walk-640.webp" srcset="assets/img/rhino-walk-640.webp 640w, assets/img/rhino-walk-1100.webp 1100w" sizes="(min-width:1000px) 560px, 100vw" width="1100" height="669" loading="lazy" decoding="async" alt="Engraved illustration of an Indian one-horned rhino walking">
+      <figcaption>The walking rhino, our back-label mark. Artwork in development.</figcaption>
+    </figure>
+  </div>
+</section>
 </main>
-
 <footer class="foot">
   <div class="wrap">
     <div class="foot__warn">
       <p class="foot__drink">Drink responsibly.</p>
       <p>Consumption of alcohol is injurious to health. Be safe, don&rsquo;t drink and drive.</p>
-      <p>For adults of legal drinking age only. You must be 25 or older in Maharashtra.</p>
+      <p>For adults of legal drinking age only: 25+ in Maharashtra.</p>
     </div>
-    <div class="foot__row">
-      <p>&copy; 2026 Rhino Spirits &amp; Beverages Private Limited &middot; CIN U11011MR2026PTC482018</p>
-      <p><a href="privacy.html">Privacy notice</a> &middot; No cookies, no tracking, no online sales.</p>
-    </div>
+    <ul class="foot__links">
+      <li><a href="range.html">Range</a></li><li><a href="story.html">Story &amp; Company</a></li><li><a href="trade.html">Trade &amp; Distributors</a></li><li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li><li><a href="responsible-drinking.html">Responsible drinking</a></li>
+    </ul>
+    <p>&copy; 2026 Rhino Spirits &amp; Beverages Private Limited &middot; CIN U11011MR2026PTC482018 &middot; Thane, Maharashtra</p>
+    <p>No online sales. Products are in development and not yet available.</p>
   </div>
 </footer>
 <script src="js/site.js" defer></script>

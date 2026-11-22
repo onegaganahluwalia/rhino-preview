@@ -1,43 +1,49 @@
-/* Rhino Republic: age gate. No cookies, no tracking, nothing sent anywhere. */
+/* Rhino Republic v2: age gate (30 days, local only) and preview forms (no backend). No cookies, no tracking. */
 (function () {
-  var KEY = 'rr_age_ok';
+  var KEY = 'rr_age_ok', DAYS = 30;
   var root = document.documentElement;
   var gate = document.getElementById('gate');
-  var ask = document.getElementById('gate-ask');
-  var exit = document.getElementById('gate-exit');
-  var yes = document.getElementById('gate-yes');
-  var no = document.getElementById('gate-no');
-  var back = document.getElementById('gate-back');
-  var main = document.getElementById('main');
-  if (!gate) return;
 
-  function lockPage(on) {
-    ['main', 'top'].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      if (on) { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); }
-      else { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); }
-    });
-    var f = document.querySelector('.foot');
-    if (f) { if (on) { f.setAttribute('inert', ''); f.setAttribute('aria-hidden', 'true'); } else { f.removeAttribute('inert'); f.removeAttribute('aria-hidden'); } }
+  function setInert(on) {
+    ['main', 'top'].forEach(function (id) { var el = document.getElementById(id); toggle(el, on); });
+    toggle(document.querySelector('.foot'), on);
+  }
+  function toggle(el, on) {
+    if (!el) return;
+    if (on) { el.setAttribute('inert', ''); el.setAttribute('aria-hidden', 'true'); }
+    else { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); }
   }
 
-  if (root.classList.contains('age-ok')) { gate.hidden = true; return; }
-  lockPage(true);
-  yes && yes.focus();
+  if (gate) {
+    if (root.classList.contains('age-ok')) { gate.hidden = true; }
+    else {
+      setInert(true);
+      var yes = document.getElementById('gate-yes');
+      yes && yes.focus();
+      yes.addEventListener('click', function () {
+        try { localStorage.setItem(KEY, JSON.stringify({ v: 1, exp: Date.now() + DAYS * 864e5 })); } catch (e) {}
+        root.classList.add('age-ok');
+        gate.hidden = true;
+        setInert(false);
+        var main = document.getElementById('main');
+        if (main) { main.setAttribute('tabindex', '-1'); main.focus({ preventScroll: true }); }
+      });
+      // "No" is a plain link to not-of-age.html; nothing is stored.
+    }
+  }
 
-  yes.addEventListener('click', function () {
-    try { localStorage.setItem(KEY, 'yes'); } catch (e) {}
-    root.classList.add('age-ok');
-    gate.hidden = true;
-    lockPage(false);
-    if (main) { main.setAttribute('tabindex', '-1'); main.focus({ preventScroll: true }); }
-  });
-  no.addEventListener('click', function () {
-    ask.hidden = true; exit.hidden = false;
-    var t = document.getElementById('gate-exit-title'); t && t.focus();
-  });
-  back.addEventListener('click', function () {
-    exit.hidden = true; ask.hidden = false; yes.focus();
+  // Preview forms: validate in the browser, never send anything.
+  Array.prototype.forEach.call(document.querySelectorAll('.js-form'), function (form) {
+    var status = form.querySelector('.form__status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var hp = form.querySelector('input[name="website"]');
+      if (hp && hp.value) { form.reset(); return; } // honeypot tripped: silently drop
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.textContent = 'Thank you. This form is a preview and is not connected yet, so nothing has been sent or stored. Please use the email address shown on this page once it is published.';
+      status.hidden = false;
+      status.focus && status.setAttribute('tabindex', '-1');
+      status.focus();
+    });
   });
 })();
