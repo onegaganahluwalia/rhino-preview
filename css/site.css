@@ -48,7 +48,8 @@ p{margin:0 0 1em}
 .gate[hidden],.age-ok .gate{display:none}
 html.js:not(.age-ok) body.gated{overflow:hidden}
 .gate__card{max-width:520px;width:100%;text-align:center;padding:28px 20px;border:1px solid var(--line);border-radius:20px;background:var(--bg)}
-.gate__mark{width:96px;margin:0 auto 10px}
+.gate__mark{width:120px;margin:0 auto 10px;display:block}
+.gate__mark img{width:100%;height:auto}
 .gate__brand{font:500 17px/1 var(--serif);letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
 .gate__title{font-size:clamp(28px,7vw,36px)}
 .gate__desc{color:var(--muted)}
@@ -60,7 +61,8 @@ html.js:not(.age-ok) body.gated{overflow:hidden}
 .top{position:sticky;top:0;z-index:20;background:rgba(21,20,19,.94);border-bottom:1px solid var(--line)}
 .top__in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 17px/1 var(--serif);letter-spacing:.24em;text-transform:uppercase;white-space:nowrap}
-.logo img{width:32px;height:auto}
+.logo picture{width:36px;flex:none;display:block}
+.logo img{width:36px;height:auto}
 .menu{position:relative}
 .menu summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;letter-spacing:.06em}
 .menu summary::-webkit-details-marker{display:none}
@@ -151,6 +153,7 @@ textarea{min-height:140px;resize:vertical}
 .foot__links{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-wrap:wrap;gap:8px 18px}
 .foot__links a{color:var(--muted)}
 .foot p{margin:0 0 6px}
+.foot__art{font-size:12px;color:var(--dim);margin-top:12px}
 
 /* tablet+ */
 @media (min-width:720px){
