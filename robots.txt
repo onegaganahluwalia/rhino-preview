@@ -1,3 +1,7 @@
 # Preview build: keep out of search engines (remove at launch)
 User-agent: *
 Disallow: /
+
+# The 180 ml value line is not for listing or discovery, even after launch.
+User-agent: *
+Disallow: /v180/

@@ -63,6 +63,8 @@ html.js:not(.age-ok) body.gated{overflow:hidden}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 17px/1 var(--serif);letter-spacing:.24em;text-transform:uppercase;white-space:nowrap}
 .logo picture{width:36px;flex:none;display:block}
 .logo img{width:36px;height:auto}
+.logo--text{letter-spacing:.06em;font-size:14px;white-space:normal;max-width:22ch}
+.logo--text span{line-height:1.25}
 .menu{position:relative}
 .menu summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center;padding:0 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;letter-spacing:.06em}
 .menu summary::-webkit-details-marker{display:none}
@@ -97,6 +99,7 @@ figcaption{font-size:13px;color:var(--dim);margin-top:10px}
 .card__img--mark{align-items:center}
 .card__img--mark img{height:62%;width:auto;opacity:.9}
 .card__body{padding:22px;display:flex;flex-direction:column;flex:1}
+.card__body h2{font-size:26px}
 .card__no{font:600 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
 .card__body p{color:var(--muted)}
 .card__body dl{margin:0 0 16px;font-size:14px}
